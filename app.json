@@ -2,6 +2,7 @@
   "name": "Cal.com",
   "description": "Schedule a meeting with our team using Cal.com.",
   "text": "Schedule a meeting",
+  "icon": "logo.svg",
   "action": {
     "label": "Schedule a meeting",
     "value": "https://nawedhossain.github.io/openwidget-cal-com-booking/?calPath=%calPath%&theme=%theme%&brandColor=%brandColor%&layout=%layout%",
