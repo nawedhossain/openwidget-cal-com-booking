@@ -1,48 +1,48 @@
-# Cal.com Booking — OpenWidget App
+# Cal.com Booking for OpenWidget
 
-An OpenWidget app that embeds a Cal.com booking calendar inline, so visitors can choose a date and time without being sent to a separate Cal.com page.
+Cal.com Booking integrates Cal.com's scheduling experience directly into an OpenWidget app. Visitors can view availability and book appointments in an inline calendar without being redirected to a separate booking page.
 
-## Files
+## Features
 
-- `app.json` — OpenWidget app metadata and installer properties.
-- `index.html` — static booking page; loads Cal.com's inline embed.
-- `logo.svg` — the provided Cal.com logo, renamed as requested. Use it as the app icon asset when submitting the app.
+- **Inline scheduling:** Renders a Cal.com booking calendar within the app experience.
+- **Configurable booking destination:** Supports personal, team, and event-type booking paths.
+- **Theme selection:** Supports light and dark themes.
+- **Brand customization:** Supports an optional custom brand color in six-digit hexadecimal format.
+- **Calendar layouts:** Supports month and week views.
+- **Responsive experience:** Enables Cal.com's slot-oriented view on smaller screens.
+- **Lightweight architecture:** Uses a static HTML page and Cal.com's official embed script; no application backend or database is required.
 
-No backend, API key, or database is needed. The calendar and booking flow are provided by Cal.com. This project does not include a `LICENSE` file.
+## Configuration
 
-## Publish the page with GitHub Pages
+The app exposes the following properties through OpenWidget:
 
-1. Create a GitHub repository. If you want to add a license when creating it, OpenWidget's current submission guide specifically asks for Apache License 2.0.
-2. Extract this ZIP and upload `app.json`, `index.html`, `logo.svg`, and `README.md` to the **root** of the repository.
-3. In GitHub, open **Settings → Pages** and configure deployment from the `main` branch and `/ (root)`.
-4. Wait for GitHub Pages to publish the site. Its URL should look like `https://nawedhossain.github.io/openwidget-cal-com-booking/`.
-5. Open `app.json` and the `action.value` URL is already set to your GitHub Pages URL. If you fork or rename the repository later, update it and preserve the query string. Example:
+| Property | Description | Supported values |
+| --- | --- | --- |
+| `calPath` | Cal.com booking path, without the protocol or domain | For example, `username/30min` or `team/event` |
+| `theme` | Calendar appearance | `light` or `dark` |
+| `brandColor` | Optional custom brand color | Six-digit hexadecimal color, with or without a leading `#`; for example, `6750A4` |
+| `layout` | Calendar layout | `month_view` or `week_view` |
 
-   ```json
-   "value": "https://nawedhossain.github.io/openwidget-cal-com-booking/?calPath=%calPath%&theme=%theme%&brandColor=%brandColor%&layout=%layout%"
-   ```
+If no valid brand color is provided, Cal.com's default branding color is used. Unsupported theme values fall back to dark mode, and unsupported layout values fall back to month view. A valid booking path is required for the calendar to load.
 
-6. Commit the edit. The `index.html` page is now hosted and can be used as the OpenWidget app's full-screen URL.
+## Implementation
 
-## Configure the OpenWidget app
+The app is delivered as a static page and initializes Cal.com's official inline embed using the selected configuration. Configuration values are passed as URL query parameters from the OpenWidget app definition to the hosted page.
 
-The values in `app.json` become setup fields in OpenWidget:
+Project files:
 
-- **Cal.com booking path (`calPath`):** `yourname/30min` or another path copied from your Cal.com booking link. Enter the path, not the complete URL.
-- **Theme (`theme`):** type `light` or `dark`. Any value other than `light` is treated as `dark`.
-- **Brand color (`brandColor`):** optional six-character hex color **without** the `#`, such as `6750A4`. Leave blank to use Cal.com's default embed color.
-- **Calendar layout (`layout`):** type `month_view` or `week_view`. Other values fall back to `month_view`.
+- `app.json` — OpenWidget app metadata, action, and configurable properties.
+- `index.html` — inline booking interface and Cal.com embed initialization.
+- `logo.svg` — SVG app icon asset.
 
-The app validates the booking path and color before using them. It does not collect or store visitor data itself; Cal.com handles the booking form and appointment flow.
+## Privacy and data handling
 
-## Test before submitting
+This app does not provide its own backend, database, or application-level collection of booking information. Scheduling, availability, and appointment submission are handled by Cal.com through its embedded booking experience. Data submitted during booking is subject to Cal.com's applicable privacy policy and terms.
 
-After enabling Pages, test a URL like this in your browser:
+## Third-party service
 
-`https://nawedhossain.github.io/openwidget-cal-com-booking/?calPath=YOURNAME/30min&theme=dark&brandColor=6750A4&layout=month_view`
+The booking calendar loads the official Cal.com embed script from `https://app.cal.com/embed/embed.js` and uses Cal.com to provide scheduling functionality. Availability and successful booking depend on the configured Cal.com booking page and the availability of Cal.com's service.
 
-Confirm that the calendar loads, the theme and color look right, the booking flow works on mobile, and the final confirmation step behaves correctly inside OpenWidget's full-screen iframe.
+## License
 
-## Submit to OpenWidget
-
-Follow OpenWidget's current instructions at <https://openwidget.com/developers/openwidget-apps>. The docs currently ask app authors to email the app details and repository to `info@openwidget.com`, include an SVG/PNG/JPEG icon under 50 KB, and include an Apache 2.0 license. The provided `logo.svg` is included as the icon asset; no license file is bundled in this ZIP.
+See the repository's `LICENSE` file for the applicable license terms.
