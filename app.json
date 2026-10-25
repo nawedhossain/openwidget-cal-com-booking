@@ -1,0 +1,17 @@
+{
+  "name": "Cal.com Booking",
+  "description": "Let visitors book appointments through an inline Cal.com calendar with customizable theme and brand color.",
+  "text": "Book an appointment",
+  "action": {
+    "label": "Book a meeting",
+    "value": "https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPOSITORY-NAME/?calPath=%calPath%&theme=%theme%&brandColor=%brandColor%&layout=%layout%",
+    "type": "button"
+  },
+  "properties": {
+    "calPath": "Your Cal.com booking path, e.g. yourname/30min (not the full URL)",
+    "theme": "Type light or dark",
+    "brandColor": "Optional hex brand color without #, e.g. 6750A4. Leave blank for Cal.com default",
+    "layout": "Type month_view or week_view"
+  },
+  "externalurl": "https://cal.com"
+}
