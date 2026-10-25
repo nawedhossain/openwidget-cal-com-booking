@@ -1,9 +1,9 @@
 {
-  "name": "Cal.com Booking",
-  "description": "Let visitors book appointments through an inline Cal.com calendar with customizable theme and brand color.",
-  "text": "Book an appointment",
+  "name": "Cal.com",
+  "description": "Schedule a meeting with our team using Cal.com.",
+  "text": "Schedule a meeting",
   "action": {
-    "label": "Book a meeting",
+    "label": "Schedule a meeting",
     "value": "https://nawedhossain.github.io/openwidget-cal-com-booking/?calPath=%calPath%&theme=%theme%&brandColor=%brandColor%&layout=%layout%",
     "type": "button"
   },
