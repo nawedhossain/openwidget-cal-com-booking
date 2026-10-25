@@ -4,7 +4,7 @@
   "text": "Book an appointment",
   "action": {
     "label": "Book a meeting",
-    "value": "https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPOSITORY-NAME/?calPath=%calPath%&theme=%theme%&brandColor=%brandColor%&layout=%layout%",
+    "value": "https://nawedhossain.github.io/openwidget-cal-com-booking/?calPath=%calPath%&theme=%theme%&brandColor=%brandColor%&layout=%layout%",
     "type": "button"
   },
   "properties": {

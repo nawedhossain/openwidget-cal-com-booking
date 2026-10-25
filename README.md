@@ -15,11 +15,11 @@ No backend, API key, or database is needed. The calendar and booking flow are pr
 1. Create a GitHub repository. If you want to add a license when creating it, OpenWidget's current submission guide specifically asks for Apache License 2.0.
 2. Extract this ZIP and upload `app.json`, `index.html`, `logo.svg`, and `README.md` to the **root** of the repository.
 3. In GitHub, open **Settings → Pages** and configure deployment from the `main` branch and `/ (root)`.
-4. Wait for GitHub Pages to publish the site. Its URL should look like `https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPOSITORY-NAME/`.
-5. Open `app.json` and replace the placeholder URL at `action.value` with your actual Pages URL, preserving the query string exactly. Example:
+4. Wait for GitHub Pages to publish the site. Its URL should look like `https://nawedhossain.github.io/openwidget-cal-com-booking/`.
+5. Open `app.json` and the `action.value` URL is already set to your GitHub Pages URL. If you fork or rename the repository later, update it and preserve the query string. Example:
 
    ```json
-   "value": "https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPOSITORY-NAME/?calPath=%calPath%&theme=%theme%&brandColor=%brandColor%&layout=%layout%"
+   "value": "https://nawedhossain.github.io/openwidget-cal-com-booking/?calPath=%calPath%&theme=%theme%&brandColor=%brandColor%&layout=%layout%"
    ```
 
 6. Commit the edit. The `index.html` page is now hosted and can be used as the OpenWidget app's full-screen URL.
@@ -37,9 +37,9 @@ The app validates the booking path and color before using them. It does not coll
 
 ## Test before submitting
 
-After enabling Pages, test a URL like this in your browser (replace the host with your Pages URL):
+After enabling Pages, test a URL like this in your browser:
 
-`https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPOSITORY-NAME/?calPath=YOURNAME/30min&theme=dark&brandColor=6750A4&layout=month_view`
+`https://nawedhossain.github.io/openwidget-cal-com-booking/?calPath=YOURNAME/30min&theme=dark&brandColor=6750A4&layout=month_view`
 
 Confirm that the calendar loads, the theme and color look right, the booking flow works on mobile, and the final confirmation step behaves correctly inside OpenWidget's full-screen iframe.
 
